@@ -111,7 +111,66 @@ button:hover {
     color: black;
 }
 
-/**/
+/*edit-blog-styling*/
+.container {
+    /* border: black;
+    border-style: solid; */
+    background-color: #E8EDED;
+}
+
+#create-edit-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #AFC0C0 1px solid;
+}
+
+#author {
+    margin-top: 30px;
+    margin-bottom: 3px;
+    width: 280px;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'IBM Plex Serif'
+}
+#title {
+   width: 80%;
+   text-align: center;
+   font-size: 24px;
+   font-weight: 600;
+   padding: 10px;
+   margin-bottom: 30px;
+   font-family: 'Roboto Serif';
+}
+
+input::placeholder {
+    font-weight: 800;
+}
+
+#blog-text {
+    width: 80%;
+    height: 400px;
+    margin-bottom: 15px;
+    font-family: 'Roboto Serif';
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+ #save-btn {
+    margin-bottom: 15px;
+    width: 65px;
+    font-weight: 500;
+    text-align: center;
+    padding: 4px;
+ }
+
+ #save-btn:hover {
+    background-color: #012528;
+    color: white;
+ }
+
 
 
 /*Footer*/
@@ -119,6 +178,7 @@ footer {
     display: flex;
     justify-content: center;
     background-color: #AFC0C0;
+    font-weight: 600;
 }
 
 footer > div {
