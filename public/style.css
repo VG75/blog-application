@@ -27,7 +27,6 @@ header > ul {
 
 header a:hover {
     color: black;
-    font-size: 15px;
     text-decoration: underline;
 }
 /*Features*/
