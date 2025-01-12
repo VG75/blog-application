@@ -1,12 +1,10 @@
 <%- include("./partials/header.ejs") %>
 <% if (locals.blog) { %>
     <div class="container">
-        <form action="/edit-blog" method="post" id="create-edit-form">
-            <input type="text" name="Author" placeholder="Author Name" id="author" value="<%= blog.author %>">
-            <input type="text" name="Title" placeholder="Title" id="title" value="<%= blog.title %>">
-            <textarea name="blogContent" id="blog-text" placeholder="Entere Blog content here...." >
-                <%= blog.content %>
-            </textarea>
+        <form action="/edit-page" method="post" id="create-edit-form">
+            <input type="text" name="author" placeholder="Author Name" id="author" value="<%= blog.author %>">
+            <input type="text" name="title" placeholder="Title" id="title" value="<%= blog.title %>">
+            <textarea name="blogContent" id="blog-text" ><%= blog.content %></textarea>
             <button id="save-btn">Save</button>
         </form>
     </div>
