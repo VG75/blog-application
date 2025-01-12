@@ -1,30 +1,32 @@
 <%- include("./partials/header.ejs") %>
 
 <div class="blog-body-section">
-    <div class="blog-container">
-        <h3>This will be the title of the blog</h3>
-        <p class="Date">Date: 11/01/2025</p>
-        <p class="Author">Author: Vageesha G</p>
-        <p class="Description">Our platform is built for discovery </p>
-        <div class="btns">
-            <form action="/view-blog" method="get">
-                <input type="hidden" name="blogIndex" />
-                <button type="submit">View</button>
-            </form>
-
-            <form action="/edit-blog" method="post">
-                <input type="hidden" name="blogIndex"  />
-                <button type="submit">Edit</button>
-            </form>
-
-            <form action="/delete-blog" method="post">
-                <input type="hidden" name="blogIndex"  />
-                <button type="submit">Delete</button>
-            </form>
+    <% let index = 0; %> <% allBlogs.forEach(blog => { %>
+        <div class="blog-container">
+            <h3><%= blog.title %></h3>
+            <p class="Date">Date: <%= blog.date %></p>
+            <p class="Author">Author: <%= blog.author %></p>
+            <p class="Description"><%= blog.content.slice(0, 35) %>.... </p>
+            <div class="btns">
+                <form action="/view-blog" method="get">
+                    <input type="hidden" name="blogIndex" value="<%= index %>"/>
+                    <button type="submit">View</button>
+                </form>
+    
+                <form action="/edit-blog" method="post">
+                    <input type="hidden" name="blogIndex" value="<%= index %>" />
+                    <button type="submit">Edit</button>
+                </form>
+    
+                <form action="/delete-blog" method="post">
+                    <input type="hidden" name="blogIndex" value="<%= index %>" />
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
         </div>
-        
-          
-    </div>
+        <% index++ %>
+    <% }) %>
+    
 
     <div class="blog-container">
         <h3>This will be the title of the blog</h3>
