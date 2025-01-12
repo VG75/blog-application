@@ -16,9 +16,11 @@ app.get("/edit-blog", (req, res) => {
     res.render("edit-blog.ejs")
 })
 
-app.get("/all-blog", (req,res) => {
+app.get("/all-blogs", (req,res) => {
     res.render("all-blogs.ejs");
 })
+
+
 
 
 app.listen(port, () => {
