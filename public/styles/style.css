@@ -15,7 +15,8 @@ header {
 }
 
 header > span {
-    font-weight: 700;
+    font-weight: 800;
+    margin-bottom: 10px;
 }
 
 header > ul {
@@ -42,6 +43,11 @@ header a:hover {
 
 .features-text {
     max-width: 450px;
+}
+
+.features-text p {
+    margin-top: 10px;
+    font-weight: 400;
 }
 
 .feature img {
