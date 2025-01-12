@@ -171,7 +171,51 @@ input::placeholder {
     color: white;
  }
 
+/*View-blog styling*/
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    background-color: #F7F3F3;
+    margin-top: 40px;
+    padding-left: 55px;
+    padding-right: 55px;
+    text-align: justify;
+}
 
+.container > h1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: 'IBM Plex Serif';
+    font-size: 28px;
+    font-weight: 700;
+}
+
+#view-date {
+    font-weight: 600;
+    font-family: 'IBM Plex Serif';
+}
+
+#view-author {
+    font-size: 18px;
+    font-family: 'IBM Plex Serif';
+    font-weight: 700;
+}
+
+#view-content {
+    font-family: 'IBM Plex Serif';
+    margin-top: 45px;
+    font-size: 14px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    line-height: 2;
+}
+#view-content p {
+    
+    margin-bottom: 35px;
+
+}
 
 /*Footer*/
 footer {
