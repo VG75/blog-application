@@ -51,7 +51,7 @@ app.post("/edit-blog", (req, res) => {
 });
 
 app.post("/edit-page", (req, res) => {
-    console.log(blogEditIndex);
+   
     const blogToEdit = allBlogs[blogEditIndex];
     
 
@@ -69,7 +69,7 @@ app.post("/edit-page", (req, res) => {
 });
 
 app.post("/create-blog", (req, res) => {
-    console.log(req.body);
+    
     const date = new Date();
     const dateStringList = date.toDateString().split(" ");
     const currentDate = `${dateStringList[2]} ${dateStringList[1]}, ${dateStringList[3]}`;
@@ -81,9 +81,14 @@ app.post("/create-blog", (req, res) => {
     };
     allBlogs.push(newBlog);
     res.redirect("/all-blogs");
+});
 
-
-})
+app.post("/delete-blog", (req, res) => {
+    const blogIndex = req.body["blogIndex"];
+    // Eliminar el blog del arreglo
+    allBlogs.splice(blogIndex, 1);
+    res.redirect("/all-blogs");
+  });
 
 
 
