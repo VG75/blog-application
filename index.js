@@ -66,6 +66,23 @@ app.post("/edit-page", (req, res) => {
     
     res.redirect("/all-blogs");
 
+});
+
+app.post("/create-blog", (req, res) => {
+    console.log(req.body);
+    const date = new Date();
+    const dateStringList = date.toDateString().split(" ");
+    const currentDate = `${dateStringList[2]} ${dateStringList[1]}, ${dateStringList[3]}`;
+    const newBlog = {
+        title: req.body["title"],
+        author: req.body["author"],
+        content: req.body["blogContent"],
+        date: currentDate
+    };
+    allBlogs.push(newBlog);
+    res.redirect("/all-blogs");
+
+
 })
 
 
