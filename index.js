@@ -21,6 +21,32 @@ app.get("/all-blogs", (req,res) => {
     res.render("all-blogs.ejs", {allBlogs: allBlogs});
 })
 
+app.get("/view-blog", (req, res) => {
+    let blogIndex = parseInt(req.query.blogIndex, 10);
+    const blog = allBlogs[blogIndex];
+    const escapeHTML = (str) => {
+        return str
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      };
+    let escapedContent = escapeHTML(blog.content);
+    let formatedContent = "<p>" + escapedContent.split("\n").join("</p><p>") + "</p>";
+
+    res.render("view-blog.ejs", {
+        title: blog.title,
+        date: blog.date,
+        author: blog.author,
+        content: formatedContent
+    })
+});
+
+app.post("/edit-blog", (req, res) => {
+    console.log(res.body["blogIndex"]);
+}) 
+
 
 
 let date = new Date();

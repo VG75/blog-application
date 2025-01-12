@@ -1,0 +1,13 @@
+<%- include("./partials/header.ejs") %>
+
+
+<div class="center-container">
+    <div class="container-blog">
+        <h1><%= title%></h1>
+        <p id="view-date">Date: <%= date%> </p>
+        <p id="view-author">  <%= author%>  </p>
+        <div id="view-content"> <%- content %> </div>
+    </div>
+</div>
+
+<%- include("./partials/footer.ejs") %>
