@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { title } from "process";
+import { type } from "os";
 
 const app = express();
 const port = 3000;
@@ -44,7 +45,9 @@ app.get("/view-blog", (req, res) => {
 });
 
 app.post("/edit-blog", (req, res) => {
-    console.log(res.body["blogIndex"]);
+    let blogIndex = parseInt(req.body["blogIndex"], 10);
+    res.render("edit-blog.ejs", {blog : allBlogs[blogIndex]});
+
 }) 
 
 
