@@ -256,3 +256,10 @@ a {
     color: #012528;
     text-decoration: none;
 }
+
+.flex-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
